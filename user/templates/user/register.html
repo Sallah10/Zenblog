@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+    <!-- <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href=" {% url 'login' %} ">Sign In</a>
+            </small>
+        </div>
+    </div> -->
+    <main id="main">
+        <section id="contact" class="contact mb-5">
+            <div class="container" data-aos="fade-up">
+                <div class="form mt-5" style="
+                box-shadow: 0 0 30px rgba(var(--color-black-rgb), 0.1);
+                padding: 30px;
+                background: var(--color-white);
+            ">
+                    <form  method="post"  action="{% url 'register' %}">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Join Today</legend>
+                            {{ form|crispy }}
+                        </fieldset>
+                        
+                        <small class="text-muted">
+                            Already Have An Account?<a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        </small>
+                        <div class="text-center">
+                            <button class="btn btn-outline-info " type="submit" style="  background: var(--color-primary);
+                            border: 0;
+                            padding: 10px 30px;
+                            color: #fff;
+                            transition: 0.4s;
+                            cursor: pointer;">Sign Up</button>
+                        </div>
+                    </form>
+                </div><!-- End Contact Form -->
+            </div>
+        </section>
+    </main>
+{% endblock content %}

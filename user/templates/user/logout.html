@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content%}
+    <main id="main">
+        <section id="contact" class="contact mb-5">
+            <div class="container" data-aos="fade-up">
+                <div class="form mt-5">
+                    <h2>You have been logged out</h2>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            <a href="{% url 'login' %}">Log In Again</a>
+                        </small>
+                    </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}
+

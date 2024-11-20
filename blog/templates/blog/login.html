@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+  <main id="main">
+    <section id="contact" class="contact mb-5">
+        <div class="container" data-aos="fade-up">
+            <div class="form mt-5">
+                <form  method="POST"  class="php-email-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <small class="text-muted">
+                        Need An Account?<a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                    </small>
+                    <div class="text-center"><button type="submit">Log In</button></div>
+                </form>
+            </div><!-- End Contact Form -->
+        </div>
+    </section>
+
+  </main>
+{% endblock content %}
